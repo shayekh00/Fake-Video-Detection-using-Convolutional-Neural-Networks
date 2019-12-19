@@ -1,0 +1,51 @@
+import cv2
+import numpy as np
+import os
+
+# Playing video from file:
+for x in range(1,5): 
+    print('images' + str(x))
+    cap = cv2.VideoCapture('video (' + str(x) + ').mp4')
+
+    try:
+        if not os.path.exists('data' + str(x)):
+            os.makedirs('data' + str(x))
+    except OSError:
+        print ('Error: Creating directory of data')
+
+    currentframe = 0
+    while(True): 
+
+        # reading from frame 
+
+        ret,frame = cap.read()
+
+        if ret: 
+            # if video is still left continue creating images
+
+            #use the 4th frame
+            if (currentframe % 4) == 0:
+
+                #check for a face in that frame
+                # Detect the faces
+    #             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    #             faces = face_cascade.detectMultiScale(gray, 1.1, 4)
+
+                name = './data' + str(x) + '/frame' + str(currentframe) + '.jpg'
+                print ('Creating...' + name)
+                cv2.imwrite(name, frame)
+
+                # writing the extracted images
+
+                ##cv2.imwrite(name, frame)
+
+            # increasing counter so that it will 
+            # show how many frames are created 
+            currentframe += 1
+
+        else: 
+            break
+
+    # When everything done, release the capture
+    cap.release()
+    cv2.destroyAllWindows()
