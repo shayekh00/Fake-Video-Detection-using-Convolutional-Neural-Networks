@@ -35,8 +35,8 @@ while(True):
             
             #check for a face in that frame
             # Detect the faces
-#             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-#             faces = face_cascade.detectMultiScale(gray, 1.1, 4)
+            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+            faces = face_cascade.detectMultiScale(gray, 1.1, 4)
             
             name = './data/frame' + str(currentframe) + '.jpg'
             print ('Creating...' + name)
