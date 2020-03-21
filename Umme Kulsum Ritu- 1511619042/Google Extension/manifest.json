@@ -7,12 +7,12 @@
     "default_title": ""
   },
   "default_locale": "en",
-  "description": "",
+  "description": "Detect Fake Video!",
   "icons": {
     "128": "icon.png"
   },
   "manifest_version": 2,
-  "name": "Simple screenshot",
+  "name": "FakeDetector",
   "permissions": [
     "tabs",
     "activeTab"
@@ -33,7 +33,7 @@
         "/skin/css/Jcrop.css",
         "/skin/css/style.css"
       ]
-      //"content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+      
     }
   ]
 }
